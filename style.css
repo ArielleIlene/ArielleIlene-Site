@@ -1,0 +1,3069 @@
+@import url("FuturaCyrillicMedium/stylesheet.css");
+@import url("Montserrat_Medium/stylesheet.css");
+@import url("Montserrat_Light/stylesheet.css");
+@import url("Montserrat_Bold/stylesheet.css");
+
+/* ============================================
+   DESIGN SYSTEM: Dark Mode Portfolio
+   ============================================ */
+
+:root {
+    --bg-dark: #0f0f0f;
+    --bg-card: #1a1a1a;
+    --text-white: #ffffff;
+    --text-gray: #656565;
+    --accent-pink: #d946ef;
+    --accent-hover: #c026d3;
+    --border-dark: #333333;
+    
+    /* Global Accents */
+    --purple-stroke: #a838A8;
+    --yellow-stroke: #FFDD00;
+    --burgundy-fill: #7a0000;
+
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --transition-base: 0.3s ease-in-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: var(--font-family);
+    line-height: 1.6;
+    overflow-x: hidden;
+    font-size: small;
+}
+
+/* --- TYPOGRAPHY --- */
+
+.bona-nova-regular {
+  font-family: "Bona Nova", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bona-nova-bold {
+  font-family: "Bona Nova", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.bona-nova-regular-italic {
+  font-family: "Bona Nova", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+h1 {
+    /* Future PT Medium Styling */
+    font-family: 'futura-pt', var(--font-family);
+    font-size: 45px;
+    font-weight: 300;
+    line-height: 1.1;
+    /*    margin-top: 15px;*/
+    color: var(--text-white);
+    /* margin-top: -199px; */
+/*
+	padding-bottom: 40px;
+	padding-left: 5%;
+*/
+}
+
+
+h1.cozy-main-title {
+    font-family: "Montserrat Bold";
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    color: #ffffff;
+    margin-top: 5%;
+}
+
+h2 { font-size: clamp(1.75rem, 5vw, 2.5rem); margin-bottom: 24px; }
+p { color: var(--text-gray); margin-bottom: 24px; }
+a { text-decoration: none; color: inherit; }
+
+/* --- NAVIGATION --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+    background: transparent;
+	margin-top: 2%;
+}
+
+/* .logo-img {
+    height: 50px;
+    width: auto;
+    margin-bottom: 30px;
+    margin-right: 200px;
+    object-fit: contain;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+} */
+
+/* Container holds them in the exact same spot */
+.logo-container {
+    position: relative;
+    height: 50px;
+    width: auto;
+    display: inline-block;
+}
+
+.logo-white {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    transition: opacity 0.3s ease-in-out; /* Smooth fade effect! */
+}
+
+
+.hover-logo {
+    height: 50px;
+    width: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none; 
+}
+
+.logo-container:hover .main-logo {
+    opacity: 0;
+}
+
+.logo-container:hover .hover-logo {
+    opacity: 1;
+}
+
+.nav-links {
+    display: flex;
+    gap: 3vw;
+    align-items: center;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+    color: var(--text-white);
+    position: relative;
+    transition: color var(--transition-base);
+}
+
+/* Underline animation for text links only (excludes the button) */
+.nav-links li a:not(.btn-primary)::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--purple-stroke);
+    transition: width var(--transition-base);
+}
+
+.nav-links li a:not(.btn-primary):hover::after {
+    width: 100%;
+}
+
+/* --- THE CONTACT BUTTON --- */
+.btn-primary {
+    width: 150px;
+    height: 40px;
+    border-radius: 50px;
+    border: 2px solid var(--text-white) !important;
+    /* border: 2px solid var(--purple-stroke) !important; */
+    background-color: transparent !important;
+    color: #ffffff !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    text-decoration: none !important;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+
+
+
+.btn-primary:hover {
+    background-color: var(--purple-stroke) !important;
+}
+
+.btn-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.btn-work {
+    width: 180px; 
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    background-color: #a333a1; 
+    border-radius: 50px;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    margin-top: 0px;
+	margin-bottom: 90%;
+}
+
+
+.icon-circle {
+    /* Set a fixed size that won't grow */
+    width: 30px; 
+    height: 30px;
+    flex-shrink: 0; /* Prevents the circle from squishing or stretching */
+    
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.btn-icon-two {
+    width: 16px; 
+    height: 16px;
+    object-fit: contain;
+}
+
+.hero {
+    height: 100vh;
+    min-height: 800px; /* Ensure enough height for the elements */
+    position: relative;
+    display: flex;
+    align-items: center; /* Vertically centers the content container */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.99)),
+                url('images/hero-bg.jpg') center/cover no-repeat;
+    overflow: hidden;
+}
+
+.hero-content {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+	padding-top: 5%;
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-end; /* This is the baseline for both boxes */
+    z-index: 10;
+    position: relative;
+    
+    /* Set a standard padding that looks good for the RIGHT box */
+    padding-bottom: 15vh; 
+}
+
+.hero-text-block {
+    flex: 0 1 auto;
+    text-align: left;
+    
+    /* ADJUST THIS to move the left box UP independently */
+    /* A higher negative number moves it further up */
+    margin-bottom: 38vh; 
+}
+
+.text-BBD {
+    font-family: FuturaCyrillicMedium, sans-serif;
+    font-size: clamp(40px, 5vw, 60px);
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 10px;
+	margin-top: 22px;
+}
+
+/* --- RIGHT SIDE: DESCRIPTION CARD --- */
+.hero-intro-card {
+    flex: 0 1 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    /* You can keep this at 0, or add a small margin if you want to tweak it too */
+    margin-bottom: 0vh; 
+}
+
+.hero-card-text {
+    font-family: "Montserrat Light", sans-serif;
+    font-size: 0.9rem;
+    color: #ffffff;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+
+
+.explorebutton {
+    background-color: #A838A8;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-family: "Montserrat Medium";
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    font-weight: 600;
+	margin-bottom: 50px;
+    /* [disabled]margin-top: -8px; */
+}
+
+.explore-left-box{
+    margin-left: 9%;
+    margin-top: 5%;
+}
+
+
+.marquee-track {
+    display: inline-block;
+	margin-top: 2%;
+    white-space: nowrap;
+    animation: scroll-left 30s linear infinite;
+	
+}
+
+.marquee-footer {
+    position: absolute;
+    /* This stays independent because it is 'absolute' */
+    bottom: 10%; 
+    left: 0;
+    width: 100%;
+    z-index: 1;
+	margin-bottom: 1%;
+}
+
+.marquee-track span {
+    font-size: 22vw;
+	font-family: "Montserrat Bold";
+    letter-spacing: 1px;
+    line-height: 1; 
+    display: inline-block;
+}
+
+/* Animation to make it loop infinitely */
+@keyframes scroll-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+
+.btn-accent {
+    background-color: var(--purple-stroke);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    display: inline-block;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* --- VIDEO SHOWCASE --- */
+.video-showcase {
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    background-color: #000; /* Fallback color */
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.full-screen-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This makes the video fill the screen like a background image */
+    display: block;
+}
+
+
+:root {
+    --section-gap: 100px; /* Adjust this one value to change all gaps at once */
+}
+
+.spacer {
+    height: var(--section-gap);
+    width: 100%;
+    background-color: transparent; /* This reveals the body's --bg-dark */
+    pointer-events: none; /* Ensures it doesn't interfere with clicks */
+}
+
+/* --- INFINITE WORK CAROUSEL SECTION --- */
+.work-carousel-section {
+    padding: 80px 0;
+    background-color: var(--bg-dark);
+    display: flex;
+    flex-direction: column; /* Stacks Carousel and Button vertically */
+    gap: 40px;             /* Space between the images and the button */
+}
+
+.carousel-viewport {
+    width: 100%;
+    overflow: hidden;      /* Clips the sliding track */
+    display: flex;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 30px;
+    /* (350px image width * 12 images) + (30px gap * 12 gaps) */
+    width: calc((350px * 12) + (30px * 12));
+}
+
+.animate-slide {
+    animation: infinite-scroll 40s linear infinite;
+}
+
+.carousel-track:hover {
+    animation-play-state: paused;
+}
+
+.carousel-img {
+    width: 350px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 40px;
+    flex-shrink: 0;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s ease;
+    cursor: pointer;
+}
+
+.carousel-img:hover {
+    transform: translateY(-20px) scale(1.02);
+    filter: brightness(1.1);
+}
+
+/* --- ACTION AREA (Button Alignment) --- */
+.carousel-action-area {
+    display: flex;
+    justify-content: flex-end; /* Aligns button to the right */
+    padding-right: 5%;         /* Matches your site margins */
+}
+
+.btn-see-all {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-white);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+.btn-see-all .arrow {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Hover State: Pink Glow & Arrow Slide */
+.btn-see-all:hover {
+    color: var(--accent-pink);
+    text-shadow: 0 0 15px rgba(217, 70, 239, 0.4);
+}
+
+.btn-see-all:hover .arrow {
+    transform: translateX(10px);
+}
+
+/* Underline Animation */
+.btn-see-all::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-pink);
+    transition: width 0.4s ease;
+}
+
+.btn-see-all:hover::after {
+    width: 100%;
+}
+
+@keyframes infinite-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); } 
+}
+
+/* --- SOLUTIONS SECTION --- */
+.solutions-section {
+    padding: 100px 5%;
+    background-color: var(--bg-dark);
+}
+
+.solutions-header {
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-family: 'futura-pt', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: var(--text-white);
+}
+
+.section-subtitle {
+    font-family: "Montserrat_Light", sans-serif;
+    max-width: 600px;
+    font-size: 1rem;
+    color: var(--text-gray);
+}
+
+/* --- THE WOW TRACE CARDS --- */
+.solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.solution-card {
+    background-color: var(--bg-card); /* #1a1a1a */
+    padding: 40px 30px;
+    border-radius: 30px; /* Outer radius */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: hidden; 
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1;
+    /* Remove the standard border-color on hover to prevent interference */
+    border: 1px solid var(--border-dark); 
+}
+
+.solution-card::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* Increased to 200% to ensure the beam fully covers corners during rotation */
+    width: 200%; 
+    height: 200%;
+    background: conic-gradient(
+        transparent, 
+        var(--purple-stroke), /* #a838A8 */
+        transparent 60% /* Your requested longer line */
+    );
+    /* Ensure it pivots exactly from the center of the card */
+    transform: translate(-50%, -50%) rotate(0deg);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -2;
+}
+
+/* The Inner Shield (The critical fix) */
+.solution-card::after {
+    content: '';
+    position: absolute;
+    /* 'inset' creates the border thickness. 2px is usually perfect */
+    inset: 2px; 
+    background: var(--bg-card);
+    /* The inner radius must be (Outer Radius - Inset) */
+    /* 30px - 2px = 28px. This ensures the line thickness is uniform */
+    border-radius: 28px; 
+    z-index: -1;
+}
+
+/* --- HOVER EFFECTS --- */
+.solution-card:hover {
+    transform: translateY(-15px);
+    /* Hide the static border completely so it doesn't mask the trace */
+    border-color: transparent; 
+}
+
+.solution-card:hover::before {
+    opacity: 1;
+    /* Your requested slower speed */
+    animation: rotateTrace 4s linear infinite; 
+}
+
+@keyframes rotateTrace {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* --- CONTENT STYLING --- */
+.lottie-container {
+    width: 100%;
+    height: 250px;
+    background-color: var(--bg-card);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+}
+
+dotlottie-player {
+    width: 90%;
+    height: 90%;
+}
+
+.card-label {
+    font-family: 'Montserrat_Bold', sans-serif;
+    font-size: 1.8rem;
+    color: var(--text-white);
+    position: relative;
+    z-index: 2;
+}
+
+.card-description {
+    font-family: "Montserrat_Light", sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-gray);
+    margin-top: auto;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* --- RESULTS SECTION --- */
+.results-section {
+    padding: 120px 0;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.results-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0px;
+}
+
+.results-content {
+    flex: 1;
+    max-width: 700px;
+	margin-right: 20%;
+}
+
+.results-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 55px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 30px;
+	padding-left: 25%;
+}
+
+.results-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #cccccc;
+    font-weight: 300;
+	padding-left: 25%;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+
+/* --- REVISED STAT NUMBER CSS --- */
+
+
+    .results-stats {
+        align-items: center;
+		padding-right: 25%;
+/*		margin-right: 50%;*/
+    }
+
+.stat-number {
+    font-family: 'Inter', sans-serif;
+    font-size: 80px;
+    font-weight: 800;
+    color: #A838A8;
+    line-height: 1;
+    display: inline-block;
+/*	padding-right: 60%;*/
+
+    opacity: 0;
+    transform: translateY(40px);
+    
+    transition: opacity 2.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 2.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stat-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #ffffff;
+/*	margin-right: 10%;*/
+}
+
+
+
+
+.stat-number.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Staggered Delay for the "Sliding" sequence */
+.stat-item:nth-child(1) .stat-number { animation-delay: 0.2s; }
+.stat-item:nth-child(2) .stat-number { animation-delay: 0.4s; }
+.stat-item:nth-child(3) .stat-number { animation-delay: 0.6s; }
+/* .stack-row a .hero-btn-small {
+}
+ */
+
+/* ONE SINGLE KEYFRAME DEFINITION */
+@keyframes revealStat {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@media (max-width : 1499px ){
+    .results-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 0px;
+    }
+	
+}
+
+
+
+/*Image Wheel Carousel*/
+
+/* --- CTA SECTION --- */
+.cta-carousel-section {
+    background-color: #000;
+    color: #fff;
+    padding: 150px 0 300px 0; /* Extra bottom padding for the wheel depth */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    
+    /* THE FADE: Ensures images disappear smoothly at the bottom */
+    mask-image: linear-gradient(to bottom, 
+        rgba(0,0,0,1) 0%, 
+        rgba(0,0,0,1) 70%, 
+        rgba(0,0,0,0) 95%);
+    -webkit-mask-image: linear-gradient(to bottom, 
+        rgba(0,0,0,1) 0%, 
+        rgba(0,0,0,1) 50%, 
+        rgba(0,0,0,0) 95%);
+}
+
+/* THE WHEEL TRACK */
+.cta-carousel-section {
+    background-color: var(--bg-dark);
+    padding: 100px 0 600px 0; 
+    padding-top: 300px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+	margin-left: -20px;
+
+    /* TWEAK: Lowering 65% to 50% moves the fade line UP */
+    mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 65%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 60%, transparent 65%);
+}
+
+.wheel-track {
+    position: absolute;
+    top: 45%; 
+    left: 50%;
+    width: 0;
+    height: 0;
+    z-index: 1;
+}
+
+.wheel-img {
+    /* Keeping your preferred smaller size */
+    width: 160px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 20px;
+    position: absolute;
+    transition: none !important; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.cta-content {
+    position: relative;
+	padding-top: 3%;
+	margin-top: 0px;
+	padding-bottom: 6%;
+    z-index: 10;
+    /* Ensure the text is readable even if images pass behind it */
+    text-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+
+.cta-title {
+    font-size: clamp(20px, 5vw, 65px);
+    font-weight: 800;
+    margin-top: 200px;
+    margin-bottom: 20px;
+}
+
+.btn-work-cta {
+    pointer-events: auto; /* Re-enable clicking for the button specifically */
+    display: inline-flex;
+    align-items: center;
+    background-color: #A838A8;
+    padding: 12px 35px;
+
+    border-radius: 50px;
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+
+
+
+/* --- REVIEWS SECTION --- */
+.reviews-section {
+/*    background-color: var(--bg-dark);*/
+    padding: 80px 5%;
+	margin-top: -350px;
+	position: relative;
+    z-index: 20;
+}
+
+.reviews-section::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent, var(--bg-dark));
+    pointer-events: none;
+}
+
+.reviews-container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.reviews-header {
+    margin-bottom: 60px;
+}
+
+.reviews-header .section-title {
+    font-family: 'FuturaCyrillicMedium', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.reviews-header .section-subtitle {
+    font-family: 'Montserrat_Light', sans-serif;
+    max-width: 700px;
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+/* Grid for 3 Cards */
+.reviews-grid {
+    display: grid;
+    /* Forces 3 columns on desktop, stacks on mobile */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.review-card {
+    background-color: #1a1a1a; /* Matching your image's dark gray */
+    padding: 35px;
+    border-radius: 30px;
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+	/* 2. PREPARE FOR ANIMATION */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.review-card:hover {
+    /* Scale up and move up simultaneously */
+    transform: translateY(-15px) scale(1.02);
+    
+    /* Add a subtle glow/shadow to make it "pop" off the page */
+    box-shadow: 0 20px 40px rgba(168, 56, 168, 0.2);
+    
+    /* Highlight the border using your brand purple */
+    border-color: var(--purple-stroke);
+    
+    background-color: #222; /* Slight lighten */
+}
+
+.review-card:hover .reviewer-pfp {
+    transform: scale(1.1);
+    border-color: var(--accent-pink);
+    transition: all 0.4s ease;
+}
+
+.reviewer-pfp {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 2px solid var(--purple-stroke);
+}
+
+.star-rating {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 20px;
+}
+
+.star-icon {
+    width: 18px;
+    height: 18px;
+    /* Optional: If stars are too bright, tint them purple */
+    filter: sepia(1) saturate(5) hue-rotate(260deg);
+}
+
+.review-text {
+    font-family: 'Montserrat_Light', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-white);
+    margin-bottom: 30px;
+}
+
+.reviewer-name {
+    font-family: 'Montserrat_Bold', sans-serif;
+    font-size: 1.15rem;
+    color: var(--text-white);
+    margin: 0;
+}
+
+.reviewer-company {
+    font-family: 'Montserrat_Light', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    margin-top: 4px;
+}
+
+
+
+/* --- FEATURES SECTION --- */
+.features-section {
+    background-color: var(--bg-dark);
+    padding: 100px 5%;
+}
+
+.features-container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.features-header {
+    margin-bottom: 80px;
+}
+
+/* Matching the Reviews Section Header */
+.features-header .section-title {
+    font-family: 'FuturaCyrillicMedium', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.features-header .section-subtitle {
+    font-family: 'Montserrat_Light', sans-serif;
+    max-width: 600px;
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+/* Grid Layout */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Feature Card Styling */
+.feature-card {
+    background-color: var(--bg-card);
+    padding: 40px;
+    border-radius: 35px;
+    border: 1px solid var(--border-dark);
+    display: flex;
+    flex-direction: column; /* Allows footer to be pushed to bottom */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Hover Animation (Matches Review Section) */
+.feature-card:hover {
+    transform: translateY(-12px);
+    border-color: var(--purple-stroke);
+    box-shadow: 0 20px 50px rgba(168, 56, 168, 0.15);
+}
+
+.card-title {
+    font-family: 'Montserrat_Bold', sans-serif;
+    font-size: 1.5rem;
+    color: var(--text-white);
+    margin-bottom: 12px;
+}
+
+.card-description {
+    font-family: 'Montserrat_Light', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    margin-bottom: 30px;
+}
+
+/* --- THE CHECKLIST LOGIC --- */
+.feature-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; /* Pushes the card-footer to the bottom */
+}
+
+.feature-checklist li {
+    font-family: 'Montserrat_Medium', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text-white);
+    display: flex;
+    align-items: center; 
+    padding: 12px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Injecting the Checkmark Image to the left */
+.feature-checklist li::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+    background-image: url('Icon_Check.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+}
+
+/* --- CARD FOOTER & BUTTON --- */
+.card-footer {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.journey-text {
+    font-family: 'Montserrat_Light', sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card-btn {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    background-color: transparent;
+    border: 1px solid var(--purple-stroke);
+    color: var(--text-white);
+    font-family: 'Montserrat_Bold', sans-serif;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.card-btn:hover {
+    background-color: var(--purple-stroke);
+    box-shadow: 0 10px 20px rgba(168, 56, 168, 0.3);
+    transform: translateY(-2px);
+}
+
+/* --- FAQ SECTION: REPAIRED LOGIC & COZY THEME --- */
+
+.faq-main-title {
+    font-family: 'FuturaCyrillicMedium', sans-serif;
+    font-size: 3.5rem; /* Slightly smaller for better balance */
+    text-align: center;
+    margin: 0 auto 80px auto; /* Centered with auto margins */
+    letter-spacing: 2px;
+    display: block;
+    width: 100%;
+}
+
+
+.faq-section {
+    padding: 120px 5%;
+    background-color: transparent !important;
+}
+
+.faq-icon-wrapper, .plus-icon {
+    width: 42px; 
+    height: 42px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    position: relative;
+    flex-shrink: 0;
+    transition: border-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.faq-icon-img {
+    position: absolute;
+    width: 200px; /* Adjust this number to make the + larger or smaller */
+    height: 200px;
+    object-fit: contain;
+    transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+/* -----START OF COZYCOVER HTML FAQ STYLES------------ */
+
+.plus-icon {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    position: relative;
+    flex-shrink: 0;
+
+    transition: border-color 0.3s ease;
+}
+
+/* 2. Rotator (handles rotation ONLY) */
+.icon-rotator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 100%;
+    height: 100%;
+
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease;
+}
+
+/* 3. Images (perfectly centered, no movement) */
+/* 3. Images (perfectly centered, no movement) */
+.icon-rotator img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90px; /* Increased from 12px to 20px */
+    height: auto;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Default state */
+.icon-white { opacity: 1; }
+.icon-yellow { opacity: 0; }
+
+/* Hover + Active color swap */
+body.cozy-page-bg .faq-item:hover .icon-white,
+body.cozy-page-bg .faq-item.active .icon-white {
+    opacity: 0;
+}
+
+body.cozy-page-bg .faq-item:hover .icon-yellow,
+body.cozy-page-bg .faq-item.active .icon-yellow {
+    opacity: 1;
+}
+
+/* Circle color change */
+body.cozy-page-bg .faq-item:hover .plus-icon,
+body.cozy-page-bg .faq-item.active .plus-icon {
+    border-color: #FFDD00;
+}
+
+/* Rotation (ONLY applied to rotator) */
+.faq-item.active .icon-rotator {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+
+/* 3. THE COSTUMES: The actual images
+.faq-icon-img {
+    position: absolute;
+    width: 90px; /* Adjust this number to make the + larger or smaller */
+    /* height: 90px;
+    object-fit: contain;
+    transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+} */ *
+
+.icon-yellow { opacity: 0; }
+.icon-white { opacity: 1; }
+
+/* Trigger yellow and rotation on hover OR active */
+.faq-item:hover .icon-white, 
+.faq-item.active .icon-white { 
+    opacity: 0; 
+}
+
+.faq-item:hover .icon-yellow, 
+.faq-item.active .icon-yellow { 
+    opacity: 1; 
+}
+
+.faq-item:hover .faq-icon-wrapper, 
+.faq-item.active .faq-icon-wrapper,
+.faq-item:hover .plus-icon,
+.faq-item.active .plus-icon { 
+    border-color: #FFDD00; 
+}
+
+/* PERSISTENT ROTATION: Stays at -45deg while .active is present */
+.faq-item.active .faq-icon-img {
+    transform: rotate(-45deg);
+}
+
+/* Keep the yellow icon visible when active */
+/* s/ */
+
+/* Cozy Page Specific Background */
+body.cozy-page-bg {
+    background: linear-gradient(to bottom, #3D0809 70%, #000000 100%) !important;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-list {
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Changed from 2px to 1px for a cleaner look */
+}
+
+.faq-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Changed from 2px to 1px */
+    transition: none; /* Removes transition to prevent any "weight" feeling on hover */
+}
+
+
+.faq-question {
+    width: 100%;
+    padding: 35px 0;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    text-align: left;
+}
+
+.faq-question span {
+    font-family: 'Montserrat_Medium', sans-serif;
+    font-size: 1.3rem;
+    color: var(--text-white);
+    transition: color 0.3s ease-in-out;
+}
+
+
+.plus-icon {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    position: relative;
+    flex-shrink: 0;
+
+    transition: border-color 0.3s ease;
+}
+
+.icon-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 100%;
+    height: 100%;
+
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease;
+}
+
+.icon-inner img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: auto;
+
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Update your CSS to this specific selector */
+.faq-item .faq-question .plus-icon .icon-rotator img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 22px; /* This is your larger size */
+    height: auto;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Default state */
+.icon-yellow {
+    opacity: 0;
+}
+.icon-white {
+    opacity: 1;
+}
+
+/* --- HOVER & ACTIVE LOGIC --- */
+
+/* 1. Turn circle yellow on hover or when open */
+body.cozy-page-bg .faq-item:hover .plus-icon,
+body.cozy-page-bg .faq-item.active .plus-icon { 
+    border-color: #FFDD00; 
+}
+
+/* 2. Swap the images */
+body.cozy-page-bg .faq-item:hover .icon-white,
+body.cozy-page-bg .faq-item.active .icon-white {
+    opacity: 0;
+}
+body.cozy-page-bg .faq-item:hover .icon-yellow,
+body.cozy-page-bg .faq-item.active .icon-yellow {
+    opacity: 1;
+}
+
+/* 3. Rotate 90 degrees counter-clockwise when active */
+.faq-item.active .plus-icon {
+    transform: rotate(-90deg);
+}
+
+.faq-item.active .icon-inner {
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+/* --- ANSWER REVEAL LOGIC --- */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    /* Smooth ease-in-out for both opening and closing */
+    transition: max-height 0.5s ease-in-out;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 1000px;
+}
+
+.faq-answer p {
+    font-family: 'Montserrat_Light', sans-serif;
+    font-size: 1rem;
+    color: #a2a2a2;
+    padding-bottom: 30px;
+    line-height: 1.8;
+}
+
+.faq-answer ul.system-requirements-list {
+    list-style-type: disc !important; 
+    margin-left: 20px !important;
+    padding-left: 10px;
+    display: block !important;
+    font-family: 'Montserrat_Light', sans-serif;
+    font-size: 1rem;
+    color: #a2a2a2;
+    padding-bottom: 30px;
+    line-height: 1.8;
+}
+
+.faq-answer li {
+    margin-bottom: 8px; /* This replaces the need for <br> */
+}
+
+/* The Base Style */
+.sendtokindle-link {
+    color: #a2a2a2;
+    /* text-decoration: underline; */
+    font-family: 'Montserrat_Medium', sans-serif;
+    font-size: 0.95rem;
+    
+}
+
+/* The Hover Style */
+.sendtokindle-link:hover {
+    color: #FFDD00 !important;
+    /* color: #0000aa !important; */
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+/* ----------END OF FAQ STYLES ---------- */
+
+/* --- VIEW MORE BUTTON UI --- */
+.faq-view-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px; /* Reduced top margin slightly */
+}
+
+.view-more-link {
+    background-color: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.3); /* Slightly thinner border */
+    color: #ffffff;
+    
+    /* Smaller dimensions */
+    padding: 10px 28px; 
+    font-size: 0.75rem; 
+    
+    font-family: 'Montserrat_Medium', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect for Cozy Page */
+body.cozy-page-bg .view-more-link:hover {
+    background-color: #FFDD00;
+    color: #3D0809;
+    font-weight: 700;
+    border-color: #FFDD00;
+    transform: translateY(-2px); /* Subtle lift on hover */
+}
+
+/* Hover effect for Portfolio */
+.view-more-link:hover {
+    background-color: #ffffff;
+    color: #0f0f0f;
+    border-color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* ----------------- start of mobile crap that needs fixing ------------------- */
+/* ----------------- MOBILE REBUILD ------------------- */
+
+@media screen and (max-width: 768px) {
+
+    /* ---------------- GLOBAL ---------------- */
+
+    html,
+    body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    body {
+        text-align: center;
+    }
+
+    /* ---------------- NAVBAR ---------------- */
+
+    .navbar {
+        padding: 18px 20px;
+
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .logo-img {
+        height: 42px;
+        margin-bottom: 0;
+    }
+
+    /* ---------------- HERO ---------------- */
+
+    .cozy-hero-wrapper {
+        min-height: auto;
+        height: auto;
+
+        /* padding-top: 25px; */
+        /* margin-top: -85px; */
+        padding-bottom: 165px;
+    }
+
+    .cozy-hero-content {
+        margin-top: -150px;
+        padding-top: 0 20px;
+        max-width: 220px;
+    }
+
+    .cozy-content-inner {
+        max-width: 240px;
+
+        margin: 0 auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        text-align: center;
+    }
+
+    h1.cozy-main-title {
+        font-size: 2.45rem;
+
+        line-height: 0.95;
+
+        letter-spacing: 1px;
+
+        margin-bottom: 18px;
+    }
+
+    .cozy-subtitle {
+        font-size: 0.8rem;
+
+        line-height: 1.55;
+
+        max-width: 225px;
+
+        margin: 0 auto 18px auto;
+
+        padding-top: 20px;
+    }
+
+    .cozy-description {
+    /* Font size update */
+    font-size: 0.80rem !important; /* Slightly larger than 0.60 for readability, but smaller than desktop */
+    line-height: 1.6;
+    
+    /* Width & Centering */
+    width: 100%;
+    max-width: 270px !important; /* Limits how wide the paragraph can get */
+    /* margin: 0 auto 20px auto !important; */
+    
+    /* Text styling */
+    text-align: center;
+    color: #d8d0d0;
+    
+    /* Prevent parent containers from forcing it wider */
+    display: block; 
+
+    padding-top: 10px;
+}
+
+    .cozy-system-text {
+        font-size: 0.62rem;
+
+        line-height: 1.55;
+
+        max-width: 200px;
+
+        margin: 18px auto;
+    }
+
+    .cozy-support-text {
+        display: none;
+    }
+
+/* -------------------- warning text ------------------- */
+
+.mobile-warning-text {
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.6;
+    color: #ffd502;
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+
+
+    /* ---------------- BUTTON STACK ---------------- */
+
+    .stack-row {
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 14px;
+
+        width: 100%;
+
+        margin-right: 0;
+    }
+
+    .download {
+        width: 100%;
+        max-width: 220px;
+
+        margin-right: 0;
+    }
+
+
+
+    /* ---------------- REMOVE TY / COFFEE BUTTONS ON MOBILE ---------------- */
+
+    #discord-link,
+    .hero-btn-small {
+        display: none !important;
+    }
+
+    /* remove entire rows */
+
+    .stack-row:has(#discord-link),
+    .stack-row:has(.hero-btn-small) {
+        display: none;
+    }
+
+    /* ---------------- HOW IT WORKS ---------------- */
+
+    .cozy-process {
+        padding: 65px 20px;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cozy-section-title {
+        font-size: 2rem;
+
+        margin-bottom: 50px;
+
+        text-align: center;
+    }
+
+
+    .cozy-gif {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        display: block;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cozy-step h3 {
+        font-size: 1.08rem;
+
+        line-height: 1.35;
+
+        max-width: 220px;
+
+        padding-top: 15px;
+        /* margin: 0 auto 12px auto; */
+
+        margin-top: -10px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cozy-step p {
+        font-size: 0.72rem;
+
+        line-height: 1.7;
+
+        max-width: 210px;
+
+        
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* ---------------- ARROWS ---------------- */
+
+    /* ---------------- ARROWS ---------------- */
+
+
+    /* ---------------- FAQ ---------------- */
+
+    .faq-section {
+        padding: 60px 18px;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .faq-main-title {
+        font-size: 2rem;
+
+        margin-bottom: 35px;
+
+        text-align: center;
+    }
+
+    .faq-container {
+        width: 100%;
+
+        max-width: 330px;
+
+        margin: 0 auto;
+    }
+
+    .faq-question {
+        padding: 18px 0;
+
+        align-items: center;
+    }
+
+    .faq-question span {
+        font-size: 0.92rem;
+
+        line-height: 1.45;
+
+        max-width: 220px;
+
+        text-align: left;
+    }
+
+    .plus-icon {
+        width: 24px;
+        height: 24px;
+
+        min-width: 24px;
+    }
+
+    .faq-item .faq-question .plus-icon .icon-rotator img {
+        width: 15px;
+    }
+
+    .faq-answer p,
+    .faq-answer li {
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: #a2a2a2;
+
+        line-height: 1.75;
+
+        padding-bottom: 18px;
+        padding-top: 10px;
+
+        text-align: left;
+    }
+
+    /* ---------------- OUTRO ---------------- */
+
+    .cozy-outro-text {
+        font-size: 0.92rem;
+
+        line-height: 1.8;
+
+        max-width: 250px;
+
+        margin: 0 auto;
+
+        padding: 0 10px;
+    }
+
+    /* ---------------- FOOTER ---------------- */
+
+    .footer-content {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        gap: 40px;
+    }
+
+    .footer-tagline {
+        max-width: 100%;
+    }
+
+    /* ---------------- CONTACT DRAWER ---------------- */
+
+    .contact-drawer {
+        width: 100%;
+        max-width: 100%;
+
+        height: 100%;
+
+        top: 0;
+
+        border-radius: 0;
+
+        transform: translateX(100%);
+    }
+
+    .contact-drawer.active {
+        transform: translateX(0);
+    }
+
+    .drawer-inner {
+        width: 100%;
+
+        padding: 30px 20px;
+
+        transform: none;
+
+        top: auto;
+    }
+
+    .form-header {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .checkbox-group {
+        flex-wrap: wrap;
+
+        gap: 10px;
+    }
+
+}
+
+/* ---------------- BACKGROUND IMAGE SWAP ---------------- */
+
+.mobile-only {
+    display: none;
+}
+
+.desktop-only {
+    display: block;
+}
+
+@media screen and (max-width: 768px) {
+
+    .desktop-only {
+        display: none;
+    }
+
+    .mobile-only {
+        display: block;
+    }
+
+    .hero-bg-img.mobile-only {
+        object-fit: cover;
+
+        object-position: center top;
+    }
+
+    .mobile-only-text {
+        display: block;
+
+        font-size: 0.72rem;
+
+        line-height: 1.7;
+
+        max-width: 220px;
+
+        margin: 18px auto 0 auto;
+
+        text-align: center;
+
+        color: #d7cfcf;
+    }
+  
+}
+
+/* ----------------- END MOBILE REBUILD ------------------- */
+
+
+
+/* -------------------------------------------------------------------------------------------------------------------------- */
+/* --- COZY COVER SPECIFIC STYLES --- */
+
+/* Update the existing body.cozy-page-bg rule */
+body.cozy-page-bg {
+    background: linear-gradient(to bottom, #3D0809 75%, #000000 95%) !important;
+    background-attachment: scroll; /* Changed from fixed to allow gradient to move with content */
+    min-height: 100vh;
+}
+
+
+/* --- HERO WRAPPER --- */
+.cozy-hero-wrapper {
+    position: relative;
+    width: 100%;
+    height: 125vh; /* Changed from 115vh */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: transparent !important;
+    z-index: 1; /* Explicitly set a base z-index */
+}
+
+.stack-row {
+    display: flex;
+    gap: 15px;
+    margin-right: 10%;
+    justify-content: center;
+}
+/* BUG FIX - leave margin-right for balanced layout */
+
+.cozy-button-stack {
+    gap: 18px;
+}
+
+/* --- BACKGROUND LAYER --- */
+.cozy-hero-bg-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Background stays at 1 */
+}
+
+.hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    /* "top" ensures the top of the bookshelves doesn't get cut off when moving it up */
+    object-position: center top; 
+}
+
+/* this class is where i am concerned with top negatvive space*/
+
+/* --- CONTENT LAYER --- */
+.cozy-hero-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Horizontally centers the content box */
+    align-items: center;     /* Vertically centers the content box */
+}
+
+.cozy-hero-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* padding: 0 20px 20px 20px; Equalized padding */
+    width: 100%;
+    margin: 0 auto; /* Ensures the flex box itself is centered */
+}
+
+
+.cozy-description {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #d6d6d6;
+    max-width: 450px;
+    margin-top: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin: 15px auto 25px auto;
+}
+
+.cozy-system-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 350; /* Medium */
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #ffffff;
+    margin-bottom: 5px;
+    font-style: italic;
+}
+
+.cozy-support-text {
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    letter-spacing: 1px;
+    font-weight: 300; /* Regular */
+    font-size: 12px;
+    color: #d6d6d6;
+    margin-top: 2%;
+}
+
+.cozy-subtitle {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #ffffff;
+    /* [disabled]margin-top: 10px; */
+}
+
+.cozy-content-inner {
+    width: 100%;       /* Ensure it fills the parent */
+    max-width: 520px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Ensure the parent container isn't pushing things */
+.cozy-button-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+.stack-row {
+    display: flex;
+    flex-direction: row; /* Ensure they stay side-by-side */
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Use gap instead of margin for consistent spacing */
+    width: 100%;
+    margin: 0 auto; /* Center the container itself */
+    padding: 0;
+}
+
+
+/* Remove the individual margin-right from the buttons to prevent lopsidedness */
+.stack-row .download {
+    margin-right: 0 !important; 
+    margin-left: 0 !important;
+}
+
+/* --------------------------------------------------------- */
+
+/* Animation Keyframes */
+@keyframes downloadBounce {
+  to { transform: translateY(0px) rotate(50deg); }
+}
+@keyframes downloadBounce2 {
+  to { transform: translateY(0px) rotate(-50deg); }
+}
+
+/* Download Button Styling */
+.download {
+    -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+    overflow: hidden;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background: #7A0000; /* Deep Red from your code */
+    border: 2px solid #FFFFFF;
+    color: white;
+    padding: 26px 0 26px 28px;
+    width: 220px;
+    display: inline-block;
+    position: relative;
+    transition: all 300ms ease;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.download span {
+    display: block;
+    position: relative;
+    z-index: 1;
+    transform: translate(0, 0);
+    transition: transform 400ms ease-out;
+}
+
+/* Arrow pseudo-elements on hover */
+.download span:after, .download span:before {
+    content: '';
+    width: 1px;
+    height: 16px;
+    background: #7A0000;
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transition: all 10ms ease-out;
+    transform-origin: center bottom;
+    transform: translateY(0) rotate(0deg);
+}
+
+.download svg {
+    z-index: 0;
+    fill: rgba(255,255,255,1);
+    position: absolute;
+    left: 20%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(0deg) scale(.04857);
+    transition: all 350ms ease-out;
+    height: 700px;
+}
+
+/* Hover States */
+.download:hover {
+    padding: 26px 0;
+    color: #7A0000;
+    background: #FFFFFF; /* Flip background to white on hover */
+}
+
+.download:hover svg {
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(60deg) scale(1);
+    fill: rgba(122, 0, 0, 0.1); /* Subtle logo background */
+}
+
+.download:hover svg#windows {
+    transform: translate(-50%, -10%) rotate(60deg) scale(1);
+}
+
+.download:hover span {
+    transform: translate(0, -10px) scale(1.1);
+}
+
+.download:hover span:after {
+    opacity: 1;
+    transform: translateY(7px) rotate(50deg);
+    animation: downloadBounce 800ms linear alternate infinite;
+}
+
+.download:hover span:before {
+    opacity: 1;
+    transform: translateY(7px) rotate(-50deg);
+    animation: downloadBounce2 800ms linear alternate infinite;
+}
+
+/* -------------------- */
+
+
+
+
+/* Specific Button Sizing */
+.hero-btn { height: 75px; width: auto; transition: 0.3s; }
+.hero-btn-small {
+    height: 45px;
+    width: auto;
+    transition: 0.3s;
+    margin-top: 15px;
+}
+.hero-btn-heart { height: 45px; width: auto; transition: 0.3s; }
+
+.hero-btn:hover, .hero-btn-small:hover, .hero-btn-heart:hover {
+    transform: scale(1.05);
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* --- BACKGROUND & SECTION COLORS --- */
+/* We use the specific ID and class to ensure the burgundy tones stick */
+body.cozy-page-bg {
+    background-color: #3C0607 !important;
+}
+
+.cozy-hero {
+    background-color: #45130B !important;
+}
+
+.cozy-process {
+    background-color: transparent !important;
+    padding: 80px 5%;
+    text-align: center;
+}
+/* ---------------- HOW IT WORKS: TIGHTENED ---------------- */
+
+    .cozy-grid-wrapper {
+    position: relative;
+    
+        display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: nowrap;
+
+    gap: 28px;
+
+    width: 100%;
+    max-width: 1280px;
+
+    margin: 0 auto;
+    padding: 0 20px;
+
+    box-sizing: border-box;
+    }
+
+    .cozy-step {
+    flex: 0 0 240px;
+    max-width: 240px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-height: 430px; /* test value */
+    }
+
+    /* 2. Kill the margin on the text that pushes the arrow away */
+    .cozy-step p {
+        font-size: 0.72rem;
+        line-height: 1.7;
+        max-width: 210px;
+        margin: 0 auto !important; /* Force zero margin-bottom */
+        padding-bottom: 5px; /* Tiny cushion for the arrow */
+    }
+
+    .cozy-arrow {
+        width: 20px;
+        display: block;
+        margin: 0 auto !important;
+        transform: rotate(0deg);
+        opacity: 0.7;
+        
+        top: -50px;
+        position: relative;
+
+    
+    }
+
+    .cozy-step h3 {
+        font-size: 1.08rem;
+        line-height: 1.35;
+        max-width: 220px;
+        margin: 10px auto 5px auto; /* Controls space between GIF and Title */
+    }
+    /* this is the working one delete the last verison */
+
+/* --- THE MOTION TOGGLE BUTTON --- */
+/* --- MOTION TOGGLE REPLICAS (Stop and Start) --- */
+/* @media (max-width:768px) { */
+
+.btn-motion-toggle,
+.btn-play-motion {
+
+    background: transparent;
+    border: none;
+    outline: none;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn-motion-toggle:hover,
+.btn-motion-toggle:focus,
+.btn-motion-toggle:focus-visible,
+.btn-motion-toggle:active,
+
+.btn-play-motion:hover,
+.btn-play-motion:focus,
+.btn-play-motion:focus-visible,
+.btn-play-motion:active {
+
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+}
+/* } */
+
+.btn-motion-toggle span,
+.btn-play-motion span {
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+
+    color: #ffffff;
+
+    letter-spacing: 0.5px;
+    text-transform: none;
+
+    white-space: nowrap;
+}
+
+.motion-icon-small {
+    width: 12px;
+    height: 12px;
+
+    min-width: 12px;
+    min-height: 12px;
+
+    max-width: 12px;
+    max-height: 12px;
+
+    display: inline-block;
+    flex-shrink: 0;
+
+    object-fit: contain;
+}
+
+.btn-motion-toggle:hover,
+.btn-play-motion:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .motion-control{
+    display:flex;
+    justify-content:center;
+    margin-bottom:25px;
+}
+
+.btn-motion-toggle{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+
+    min-width:260px;
+    min-height:36px;
+
+    background:none;
+    border:none;
+
+    color:#fff;
+    cursor:pointer;
+}
+
+    .cozy-grid-wrapper {
+    flex-direction: column;
+}
+
+.cozy-step {
+    flex: none;
+
+    width: 100%;
+    max-width: 240px;
+}
+
+.cozy-arrow {
+    transform: rotate(90deg);
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    top: 5px; 
+    /* leave for alignment */
+}
+}
+
+
+.cozy-gif-container {
+    width: 260px;     
+    height: 260px;   
+    background: #000;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 7px;
+    overflow: hidden;
+    /* margin-bottom: 15px; */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    
+    /* Center the GIF inside the box */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cozy-gif {
+    width: 100%;
+    height: 100%;
+    /* CHANGE: 'contain' prevents the zooming/cropping you experienced */
+    object-fit: contain; 
+}
+
+
+
+/* --- LABELS & TEXT (20% LARGER) --- */
+.cozy-step h3 {
+    font-size: 1.1rem; /* Increased 20% from 1rem */
+    /* margin-bottom: 10px;
+    padding-top: 5%; */
+    color: #fff;
+    line-height: 1.2;
+}
+
+.cozy-step p {
+    font-size: 0.9rem; /* Increased 20% from 0.75rem */
+    color: #b0b0b0;
+    line-height: 1.4;
+}
+
+
+/* --- REFINED OUTRO & FOOTER --- */
+
+.cozy-outro-section {
+    padding: 120px 5% 150px 5%; /* Increased bottom padding */
+    text-align: center;
+    background: transparent;
+}
+
+.cozy-outro-text {
+    font-family: "Montserrat Medium", sans-serif;
+    font-size: 1.02rem;
+    line-height: 1.8;
+    max-width: 750px;
+    margin: 0 auto;
+    margin-bottom: 7.5%;
+    color: #FFFFFF;
+    text-wrap: balance;
+    opacity: 0.85;
+}
+
+/* Update your .site-footer rule */
+.site-footer {
+    background-color: transparent; /* Keeps the body gradient visible */
+    padding: 80px 8% 40px 8%;
+    color: #FFFFFF;
+    
+    /* ADD THIS LINE: */
+    /* 0.1 creates a 10% opacity line that sits 'on top' of the gradient */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr; /* Brand gets more space */
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+.footer-logo {
+    height: 75px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+  
+    opacity: 0.8;
+}
+
+.footer-tagline {
+    font-family: "Montserrat Light", sans-serif;
+    font-size: 0.85rem;
+    color: #a1a1a1;
+    max-width: 185px;
+  
+}
+
+.footer-heading {
+    font-family: "Montserrat Bold", sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    color: #FFFFFF;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    font-family: "Montserrat Medium", sans-serif;
+    font-size: 0.9rem;
+    color: #a1a1a1;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent-hover); /* Matches your FAQ accent color */
+}
+
+.footer-email {
+    position: relative;
+    font-family: "Montserrat Medium", sans-serif;
+    font-size: 0.9rem;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding-bottom: 4px;
+}
+
+.footer-email::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+        height: 2px;
+        background-color: var(--accent-hover);
+    transition: width 0.3s ease;
+}
+
+.footer-email:hover {
+    color: var(--accent-hover);
+}
+
+.footer-email:hover::after {
+    width: 100%;
+}
+
+.footer-bottom {
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+}
+
+.copyright {
+    font-family: "Montserrat Light", sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+    .footer-tagline {
+        margin: 0 auto;
+    }
+}
+
+/* Target the specific Thank You button image */
+#ty-button-img {
+    width: 250px;           /* Adjust this value until it looks right to you */
+    height: auto;          /* Keeps the proportions perfect */
+    display: block;        /* Prevents weird bottom spacing */
+    transition: transform 0.2s ease; /* Makes the click feel snappy */
+    cursor: pointer;
+}
+
+/* Optional: add a tiny lift effect when hovering */
+#ty-button-img:hover {
+    transform: scale(1.05);
+}
+
+/* Ensure the container doesn't force it to be large */
+.hero-btn-adjustment {
+    display: inline-block;
+    width: auto; 
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+}
+
+
+
+/* -----------------------Contact Drawer Styles ---------------------*/
+/* ================================
+   CONTACT DRAWER (UPDATED WITH BG)
+================================ */
+
+.contact-drawer {
+    position: fixed;
+    top: 50%;
+    right: 0;
+
+    transform: translate3d(100%, -50%, 0);
+    will-change: transform;
+    backface-visibility: hidden;
+
+    width: 1100px;
+    max-width: 95vw;
+    height: 700px;
+
+    background-image: url('images/PostcardBackgroundImage_Full.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    z-index: 1001;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.contact-drawer.active {
+    transform: translate3d(0, -50%, 0);
+}
+
+.drawer-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: 1000;
+}
+
+.drawer-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Adjust the inner wrapper to sit nicely over the postcard image */
+.drawer-inner {
+    width: 90%;
+    max-width: 850px;
+    position: relative;
+    /* Adjust top/transform if you need to nudge the form to align with postcard lines */
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 40px; 
+}
+
+
+
+
+.thank-you-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: radial-gradient(
+        circle at center,
+        rgba(0, 0, 0, 0.95) 0%,   /* darkest center */
+        rgba(0, 0, 0, 0.85) 55%,
+        rgba(0, 0, 0, 0.75) 75%,
+        rgba(0, 0, 0, 0.65) 100%   /* lighter edges */
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.5s ease;
+    z-index: 2000;
+}
+
+.thank-you-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.thank-you-message {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    text-align: center;
+    max-width: 500px;
+    line-height: 1.6;
+    max-width: 375px;
+
+    opacity: 0;
+    text-shadow: 0 0 20px rgba(255,255,255,0.15);
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+
+.thank-you-overlay.active .thank-you-message {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.unavailable-message {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    text-align: center;
+    max-width: 500px;
+    line-height: 1.6;
+    max-width: 375px;
+
+    opacity: 0;
+    text-shadow: 0 0 20px rgba(255,255,255,0.15);
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.form-stamp {
+    width: 85px;
+    height: auto;
+    transform: rotate(-6deg);
+    opacity: 0.95;
+    flex-shrink: 0; 
+}
+
+.form-header {
+    display: flex;
+    flex-direction: row;      /* force horizontal */
+    align-items: center;      /* vertical alignment */
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+
+/* text container */
+.header-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* title */
+.header-text h2 {
+    margin: 0;
+    font-family: "Bona Nova", serif;
+    font-size: 3rem;
+    color: #A40000;
+}
+
+/* paragraph */
+.header-text p {
+    margin-top: 8px;
+    font-family: 'Montserrat', sans-serif;
+    color: #555;
+    max-width: 500px;
+}
+
+/* CLOSE */
+.close-btn {
+    position: absolute;
+    top: 55px;
+    right: 55px;
+    padding-right: 1.5%;
+    font-size: 2.75rem;
+    color: #8b0000;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* HEADER */
+/* INNER WRAPPER CREATES SPACE FROM BORDER */
+
+
+/* FORM LAYOUT */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-row {
+    display: flex;
+    gap: 30px;
+}
+
+/* INPUT GROUP */
+.input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: #888;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+/* INPUTS (KEY FIX) */
+.input-group input,
+.input-group textarea {
+    background: #E8DDD4; /* warm tan */
+    color: #2a2a2a;
+    border: 1px solid rgba(0,0,0,0.08);
+    padding: 14px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: #A40000;
+    background: #EFE4DB;
+}
+
+/* CHECKBOXES */
+.checkbox-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.group-label {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: #888;
+    text-transform: uppercase;
+}
+
+.checkbox-group {
+    display: flex;
+    gap: 20px;
+}
+
+/* CLEAN CHECK STYLE */
+.check {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: #444;
+    cursor: pointer;
+}
+
+.check input {
+    accent-color: #A40000;
+}
+
+/* BUTTON */
+.submit-btn {
+    display: block;
+    margin: 15px auto 0;
+
+    background: #A40000;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    border-radius: 6px;
+
+    padding: 14px 40px;
+    border: none;
+    cursor: pointer;
+
+    position: relative;
+    overflow: hidden;
+
+    transition: all 0.25s ease;
+
+    margin-bottom: 10px;
+
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(164, 0, 0, 0.25);
+}
+
+.submit-btn:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.submit-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255,255,255,0.2);
+    transform: skewX(-20deg);
+    transition: 0.5s;
+}
+
+.submit-btn:hover::after {
+    left: 125%;
+}
+
+/* MOBILE */
+/* hide TY + coffee buttons on mobile */
+
+/* @media screen and (max-width: 768px) {
+
+    .mobile-hide-row {
+        display: none !important;
+    } */
+
+
+    /* .form-row {
+        flex-direction: column;
+    } */
+/* .mobile-hide-row {
+    opacity: 0.2 !important;
+    border: 5px solid red !important;
+} */
+   
+
+
+
+/* ------------------ End of Contact Drawer Styles ---------------------- */
+
+
+
+/* --- UNDER CONSTRUCTION SPECIFIC STYLES --- */
+
+/* This specifically overrides the background for ONLY this page */
+body.construction-page {
+    background-color: #000000 !important;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Center everything within the container on this page only */
+.construction-page .construction-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    text-align: center;
+    background-color: #000000;
+	margin-top: 150px;
+}
+
+/* Scoped text styles so your other H1s stay cozy */
+.construction-page .construction-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    color: #ffffff;
+    margin: 0 0 10px 0;
+}
+
+.construction-page .construction-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+/* Scoped Image and Link */
+.construction-page .construction-img {
+    max-width: 350px;
+    width: 90%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.construction-page .construction-link {
+    color: #ffffff;
+    text-decoration: underline;
+    font-family: 'Montserrat', sans-serif;
+	padding-left: 3.5%;
+}
+
+.construction-page .construction-link:hover {
+    color: var(--yellow-stroke);
+    text-decoration: underline;
+}
+
+/* Scoped Tape Divider */
+.construction-page .tape-divider {
+    width: 100%;
+    background-color: #000000;
+    line-height: 0;
+	margin-top: 40px;
+}
+
+/* ------------------------------END OF CONSTRUCTION PAGE STYLES ------------------------------------------ */
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    .featured-project {
+        grid-template-columns: 1fr;
+    }
+
+    .project-preview-card {
+        height: 300px;
+    }
+
+    .studio-card {
+        padding: 40px 30px;
+    }
+
+    .aim-nav-links {
+        display: none;
+    }
+
+    .aim-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* -------------------------------END OF AIM HOME PAGE STYLES --------------------------------- */
+
+
+
+
+@media screen and (max-width: 768px) {
+
+    .mobile-hide {
+        display: none !important;
+    }
+
+}
+
+/* Specific fix for the download buttons on real mobile devices */
+@media screen and (max-width: 768px) {
+    body.cozy-page-bg .cozy-button-stack, 
+    body.cozy-page-bg .cozy-system-text {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+}
+
+/* --- DESKTOP SPECIFIC FIXES --- */
+@media (min-width: 901px) {
+    .btn-motion-toggle, 
+    .btn-play-motion {
+        position: absolute;
+        top: 20px;       /* Spacing relative to the wrapper's top border */
+        right: 15px;     /* Spacing relative to the wrapper's right border */
+        z-index: 50;     /* Keeps the button sitting cleanly over all grid images */
+        margin: 0;       /* Overrides any conflicting block margins */
+        margin-bottom: 500px;
+        transform: translateY(-55px);
+    }
+}

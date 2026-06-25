@@ -1,0 +1,662 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 120px;
+}
+
+body.aim-home-body {
+    font-family: "Montserrat", sans-serif;
+    background: #0f0f0f;
+    color: white;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+}
+
+body.aim-home-body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* =========================================
+   BACKGROUND EFFECTS
+========================================= */
+
+.aim-bg-orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.18;
+    pointer-events: none;
+    z-index: 0;
+    animation: aimFloatOrb 18s ease-in-out infinite;
+}
+
+.aim-orb-1 {
+    width: 520px;
+    height: 520px;
+    background: #a838a8;
+    top: -180px;
+    left: -120px;
+}
+
+.aim-orb-2 {
+    width: 420px;
+    height: 420px;
+    background: #6d28d9;
+    bottom: -120px;
+    right: -100px;
+    animation-delay: -6s;
+}
+
+.aim-orb-3 {
+    width: 320px;
+    height: 320px;
+    background: #9333ea;
+    top: 40%;
+    left: 60%;
+    animation-delay: -12s;
+}
+
+@keyframes aimFloatOrb {
+    0% { transform: translate(0px, 0px); }
+    50% { transform: translate(40px, -50px); }
+    100% { transform: translate(0px, 0px); }
+}
+
+/* MOUSE GLOW */
+
+.aim-mouse-glow {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(168,56,168,0.14) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+}
+
+/* =========================================
+   PARTICLE CANVAS
+========================================= */
+
+#aim-particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* =========================================
+   PAGE WRAPPER
+========================================= */
+
+.aim-page-wrapper {
+    position: relative;
+    z-index: 10; /* Change this from 2 to 10 */
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.aim-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 26px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: transform 0.4s ease, padding 0.3s ease;
+}
+
+/* HIDDEN STATE */
+.aim-navbar-hidden {
+    transform: translateY(-100%);
+}
+
+.aim-logo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: white;
+}
+
+.aim-nav-links {
+    display: flex;
+    gap: 35px;
+}
+
+.aim-nav-links a {
+    color: #b7b7b7;
+    text-decoration: none;
+    transition: 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.aim-nav-links a:hover {
+    color: white;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.aim-hero-section {
+    padding: 180px 6% 140px;
+}
+
+.aim-hero-content {
+    max-width: 850px;
+}
+
+.aim-status-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: rgba(168,56,168,0.15);
+    border: 1px solid rgba(168,56,168,0.35);
+    color: #f0c5ff;
+    margin-bottom: 30px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.aim-main-title {
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    line-height: 0.95;
+    margin-bottom: 30px;
+    max-width: 3000px;
+}
+
+.aim-main-description {
+    max-width: 650px;
+    color: #9c9c9c;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 45px;
+}
+
+/* BUTTONS */
+
+.aim-button-row {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.aim-primary-btn,
+.aim-secondary-btn,
+.aim-project-btn {
+    padding: 16px 30px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aim-primary-btn,
+.aim-project-btn {
+    background: #a838a8;
+    color: white;
+}
+
+.aim-primary-btn:hover,
+.aim-project-btn:hover {
+    background: #c026d3;
+    transform: translateY(-3px);
+}
+
+.aim-secondary-btn {
+    border: 1px solid rgba(255,255,255,0.15);
+    color: white;
+}
+
+.aim-secondary-btn:hover {
+    border-color: #a838a8;
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   FEATURED SECTION
+========================================= */
+
+.aim-featured-section {
+    display: grid;
+    grid-template-columns: 1fr 450px;
+    gap: 80px;
+    align-items: center;
+    padding: 0 6% 160px;
+}
+
+.aim-section-tag {
+    color: #d8a6ff;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.aim-section-title {
+    font-size: 3.2rem;
+    margin-bottom: 25px;
+    line-height: 1.05;
+}
+
+.aim-section-description {
+    color: #a0a0a0;
+    line-height: 1.8;
+    max-width: 1200px;
+}
+
+.aim-feature-list {
+    margin: 35px 0;
+    padding-left: 20px;
+    color: #c7c7c7;
+}
+
+.aim-feature-list li {
+    margin-bottom: 12px;
+}
+
+/* PREVIEW CARD */
+
+.aim-preview-card {
+    position: relative;
+    height: 420px;
+    border-radius: 36px;
+    overflow: hidden;
+    background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+    border: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aim-preview-glow {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: rgba(168,56,168,0.22);
+    filter: blur(90px);
+}
+
+.aim-preview-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.aim-preview-label {
+    color: #d8a6ff;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+}
+
+.aim-preview-content h3 {
+    font-size: 3rem;
+    margin: 20px 0;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+.aim-preview-text {
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+/* =========================================
+   STUDIO
+========================================= */
+
+.aim-studio-section {
+    padding: 0 6% 160px;
+}
+
+.aim-studio-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 40px;
+    padding: 70px;
+}
+
+/* =========================================
+   FAQ
+========================================= */
+
+.aim-faq-section {
+    padding: 0 6% 160px;
+    display: grid;
+    gap: 25px;
+}
+
+.aim-faq-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 28px;
+    padding: 38px;
+    transition: 0.3s ease;
+}
+
+.aim-faq-card:hover {
+    border-color: rgba(168,56,168,0.35);
+    transform: translateY(-4px);
+}
+
+.aim-faq-card h3 {
+    margin-bottom: 15px;
+}
+
+.aim-faq-card p {
+    color: #9d9d9d;
+    line-height: 1.7;
+}
+
+/* =========================================
+   CONTACT SECTION
+========================================= */
+
+.aim-contact-section {
+    padding: 0 6% 160px;
+    display: grid;
+    grid-template-columns: 1fr 520px;
+    gap: 70px;
+    align-items: start;
+}
+
+.aim-contact-links {
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.aim-contact-links a {
+    color: #d0d0d0;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.aim-contact-links a:hover {
+    color: #d8a6ff;
+    transform: translateX(5px);
+}
+
+/* CONTACT CARD */
+
+.aim-contact-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 36px;
+    padding: 40px;
+    backdrop-filter: blur(14px);
+}
+
+/* FORM */
+
+.aim-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.aim-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-right: 300;
+    left: 300px;
+}
+
+.aim-input-group label {
+    font-size: 0.9rem;
+    color: #d0d0d0;
+}
+
+.aim-input-group input,
+.aim-input-group textarea {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    padding: 18px 20px;
+    color: white;
+    font-family: inherit;
+    resize: none;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.aim-input-group input:focus,
+.aim-input-group textarea:focus {
+    border-color: rgba(168,56,168,0.6);
+    box-shadow: 0 0 0 4px rgba(168,56,168,0.12);
+}
+
+/* BUTTON */
+
+.aim-submit-btn {
+    border: none;
+    background: #a838a8;
+    color: white;
+    padding: 18px 28px;
+    border-radius: 999px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.aim-submit-btn:hover {
+    background: #c026d3;
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.aim-footer {
+    position: relative;
+    z-index: 100; /* Bumped higher */
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 45px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-tagline-aim {
+    color: white;
+    font-weight: 300;
+    font-size: 1rem;
+    font-style: italic;
+    margin-bottom: 10%;
+
+}
+
+.aim-footer-left p {
+    margin-top: 8px;
+    color: #8d8d8d;
+}
+
+.aim-footer-text {
+    font-size: 0.9em;
+}
+
+.aim-footer-right {
+    display: flex;
+    gap: 25px;
+    position: relative;
+    z-index: 101; /* Force the link container higher than the footer */
+}
+
+.aim-footer-right a {
+    color: #9c9c9c;
+    text-decoration: none;
+    transition: 0.3s ease;
+    position: relative;
+    z-index: 102; /* Ensure links accept mouse inputs directly */
+}
+
+.aim-footer-right a:hover {
+    color: white;
+}
+
+/* =========================================
+   SCROLL REVEAL
+========================================= */
+
+.aim-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.aim-reveal.active {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+/* =========================================
+   RESPONSIVE MEDIA QUERIES
+========================================= */
+
+@media (max-width: 950px) {
+    .aim-featured-section,
+    .aim-contact-section {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .aim-preview-card {
+        height: 320px;
+    }
+
+    .aim-nav-links {
+        display: none;
+    }
+
+    .aim-mobile-logo {
+        height: 45px;
+        width: auto;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+
+    .aim-studio-card {
+        padding: 40px 30px;
+    }
+
+    .aim-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 640px) {
+    .aim-hero-section {
+        padding-top: 90px;
+    }
+
+    .aim-main-title {
+        font-size: 3rem;
+    }
+
+    .aim-button-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .aim-primary-btn,
+    .aim-secondary-btn,
+    .aim-project-btn {
+        width: 100%;
+    }
+
+    .aim-section-title {
+        font-size: 2.3rem;
+    }
+
+    .aim-studio-card,
+    .aim-contact-card {
+        border-radius: 28px;
+    }
+
+    .aim-faq-card,
+    .aim-contact-card {
+        padding: 28px;
+    }
+}
+
+
+
+/* =========================================
+   THANK YOU OVERLAY
+========================================= */
+.thank-you-overlay {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(
+        circle at center,
+        rgba(0, 0, 0, 0.95) 0%,   /* darkest center */
+        rgba(0, 0, 0, 0.85) 55%,
+        rgba(0, 0, 0, 0.75) 75%,
+        rgba(0, 0, 0, 0.65) 100%   /* lighter edges */
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    z-index: 2000;
+}
+
+.thank-you-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.thank-you-message {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    text-align: center;
+    max-width: 375px;
+    line-height: 1.6;
+    opacity: 0;
+    text-shadow: 0 0 20px rgba(255,255,255,0.15);
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.thank-you-overlay.active .thank-you-message {
+    opacity: 1;
+    transform: translateY(0);
+}
